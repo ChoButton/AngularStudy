@@ -1,0 +1,17 @@
+<div class="title">
+
+  <div class="display">
+
+    <app-time-display [inputData]="present"></app-time-display>
+
+    <app-button (clickEvent)="timeControl($event)"></app-button>
+
+
+
+
+    {{commandText}}
+    <app-button (clickEvent)=" commandText = $event"></app-button>
+
+  </div>
+  
+</div>
