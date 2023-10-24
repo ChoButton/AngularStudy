@@ -1,0 +1,23 @@
+<div class="title">
+
+  <div class="display">
+
+    <app-time-display [inputData]="present"></app-time-display>
+
+    <!-- <app-button (clickEvent)="timeControl($event)"></app-button>
+
+
+
+
+    {{commandText}}
+    <app-button (clickEvent)=" commandText = $event"></app-button> -->
+
+  </div>
+
+  <a [routerLink]=" '/clock' ">시계로 이동</a> 
+
+  <button (click)="goClock()">
+    시계로 이동
+  </button>
+  
+</div>
