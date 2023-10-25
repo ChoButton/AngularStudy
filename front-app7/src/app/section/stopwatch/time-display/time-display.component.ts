@@ -16,7 +16,7 @@ export class TimeDisplayComponent{
   timeInterval: any;
 
   constructor(
-    private pageToggleService : PageToggleService
+    // private pageToggleService : PageToggleService
   ) {
     this.min = 0;
     this.sec = 0;
@@ -29,6 +29,15 @@ export class TimeDisplayComponent{
     // this.timeStop(); 추가
     this.timeStop();
     this.timeInterval = setInterval(() => {
+
+      if(this.ms >= 100) {
+        this.ms = 0;
+        this.sec++;
+      }
+      if(this.sec >= 60) {
+        this.sec = 0;
+        this.min++;
+      }
       this.ms++;
     }, 10)
   }
@@ -39,26 +48,16 @@ export class TimeDisplayComponent{
 
   timeReset(){
     this.timeStop()
+    this.min = 0;
+    this.sec = 0;
     this.ms = 0;
   }
 
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   for(let propName in changes){
-  //     if(propName == 'inputData'){
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ng on changes')
+    for(let propName in changes) {
 
-  //       switch(changes[propName].currentValue){
-  //         case 'start' : 
-  //           this.timeStart();
-  //           break;
-  //         case 'stop' : 
-  //           this.timeStop();
-  //           break;
-  //         case 'reset' : 
-  //           this.timeReset();
-  //           break;  
-  //       }
-  //     }
-  //   }
-  // }
+    }
+  }
 }

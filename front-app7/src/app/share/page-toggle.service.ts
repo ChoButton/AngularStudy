@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { SectionModule } from '../section/section.module';
 
 @Injectable(
-  // {
-  // providedIn: StopwatchComponent'
-  // }
+  {
+    // 앵귤러팀에서의 권장사항 서비스단에서 적용될 모듈을 기술함
+  providedIn: SectionModule
+  }
 )
 export class PageToggleService {
 
